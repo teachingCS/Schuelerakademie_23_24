@@ -7,7 +7,7 @@ Bei jedem Klick auf den Button wird auf dem Button angezeigt, wie oft der Button
 (Dieser Text steht auch als Kommentar im Skript "ratespiel.gd")
 
 ## Programmierherausforderungen bis zum nächsten Treffen am 12.10:
-###Herausforderung 1:
+### Herausforderung 1:
 Beim Anklicken des RestartButtons soll das Spiel mit allen nötigen Werten wieder zurückgesetzt werden, so dass das Spiel nicht ständig neu gestartet werden muss.
 ### Herausforderung 2:
 An geeigneter Stelle soll mittels eines passenden Nodes angezeigt werden, wie viele Rateversuche bereits gebraucht wurden.

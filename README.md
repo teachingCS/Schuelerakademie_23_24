@@ -1,16 +1,12 @@
 # Schuelerakademie_23_24
 Hier werden alle Projekte gespeichert, die im Rahmen des Kurses 2D & 3D Spieleprogrammierung umgesetzt werden.
 
-## Programmierherausforderung bis 05.10.:
-Verwandelt den Button in einen "Click-counter" Button.
-Bei jedem Klick auf den Button wird auf dem Button angezeigt, wie oft der Button geklickt wurde. Viel Spaß und Erfolg dabei!
-(Dieser Text steht auch als Kommentar im Skript "ratespiel.gd")
-
-## Programmierherausforderungen bis zum nächsten Treffen am 12.10:
+## Programmierherausforderungen bis zum nächsten Treffen am 26.10:
 
 ### Herausforderung 1:
-Beim Anklicken des RestartButtons soll das Spiel mit allen nötigen Werten wieder zurückgesetzt werden, so dass das Spiel nicht ständig neu gestartet werden muss.
+Erstellt das Projekt "SpingKatze" erneut, damit ihr eine super Routine im Aufbau von 2D-Spielen bekommt
 ### Herausforderung 2:
-An geeigneter Stelle soll mittels eines passenden Nodes angezeigt werden, wie viele Rateversuche bereits gebraucht wurden.
+Reduziert den Code von CharacterBody2D so, dass die Katze nicht mehr nach links und rechts laufen kann. Sie soll nur noch springen können
 
+Bei Fragen könnt ihr mir JEDERZEIT gerne eine Mail schicken!
 Viel Spaß und Erfolg!

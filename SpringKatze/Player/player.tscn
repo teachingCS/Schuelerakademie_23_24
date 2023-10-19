@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://doyp03miw6i84"]
+
+[ext_resource type="Script" path="res://Player/player.gd" id="1_6c218"]
+[ext_resource type="Texture2D" uid="uid://2pqoxludev0e" path="res://Assets/Player/jump.png" id="2_awq6t"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xo7t8"]
+radius = 56.0
+height = 160.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_6c218")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_awq6t")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_xo7t8")

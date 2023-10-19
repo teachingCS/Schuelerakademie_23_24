@@ -27,6 +27,7 @@ text = "Ich bin ein Label"
 horizontal_alignment = 1
 
 [node name="SpinBox" type="SpinBox" parent="VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 max_value = 200.0
@@ -66,5 +67,21 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 30
 text = "Klick mich!"
 
+[node name="CounterLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Anzahl der Versuche:"
+
 [connection signal="pressed" from="VBoxContainer/CheckButton" to="." method="_on_check_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -29,6 +29,9 @@ func _on_button_pressed():
 
 
 func _on_check_button_pressed():
+	# counter, also Anzahl der Versuche wird um eins erhöht
+	counter = counter + 1
+	refresh_counterlabel()
 	player_number = $VBoxContainer/SpinBox.value
 	if (player_number < computer_number):
 		%InfoLabel.text = "Die geratene Zahl ist zu klein."
@@ -47,6 +50,23 @@ func restart_game():
 # Beim anklicken des RestartButtons soll das Spiel mit allen 
 # nötigen Werten wieder zurückgesetzt werden, so dass das Spiel
 # nicht ständig neu gestartet werden muss
+func _on_restart_button_pressed():
+	# Anzahl der geratenen Versuche auf 0 zurücksetzen
+	counter = 0
+	refresh_counterlabel()
+	# Eine neue Zufallszahl bestimmen lassen
+	computer_number = randi_range(0, 200)
+	# SpinBox zurücksetzen
+	%SpinBox.value = 0
+	# Das Infolabel auf den Startwert setzen
+	%InfoLabel.text = "Infolabel"
+	%RestartButton.hide()
+	%CheckButton.show()
+
+
 # Herausforderung 2:
 # An geeigneter Stelle soll mittels eines passenden Nodes angezeigt werden
 # wie viele Rateversuche bereits gebraucht wurden
+func refresh_counterlabel():
+	%CounterLabel.text = "Anzahl der Versuche: " + str(counter)
+

@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=3 uid="uid://du33s0pbj6o5q"]
+
+[ext_resource type="Texture2D" uid="uid://lyaddcoql4dp" path="res://icon.svg" id="1_im7md"]
+[ext_resource type="Texture2D" uid="uid://bitundhsc2gbd" path="res://pumpkin.png" id="2_xqi2w"]
+[ext_resource type="Script" path="res://tile_map.gd" id="3_gcw36"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qn0pl"]
+texture = ExtResource("1_im7md")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/modulate = Color(0, 0, 0, 1)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qyorj"]
+texture = ExtResource("2_xqi2w")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_0ajay"]
+tile_size = Vector2i(128, 128)
+sources/0 = SubResource("TileSetAtlasSource_qn0pl")
+sources/1 = SubResource("TileSetAtlasSource_qyorj")
+
+[node name="TileMap" type="TileMap"]
+tile_set = SubResource("TileSet_0ajay")
+format = 2
+script = ExtResource("3_gcw36")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+zoom = Vector2(0.5, 0.5)

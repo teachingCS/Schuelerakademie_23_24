@@ -8,6 +8,7 @@ radius = 56.0
 height = 160.0
 
 [node name="Player" type="CharacterBody2D"]
+collision_mask = 7
 script = ExtResource("1_6c218")
 metadata/_edit_group_ = true
 

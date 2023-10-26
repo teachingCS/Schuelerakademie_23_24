@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://df2qmf64rwnip"]
+
+[ext_resource type="Texture2D" uid="uid://cvxtwg0dhgff1" path="res://Assets/Obstacles/Sloth/s1.png" id="1_0263i"]
+[ext_resource type="Script" path="res://Obstacle/obstacle.gd" id="1_hdkxp"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x2l0o"]
+radius = 88.0
+height = 240.0
+
+[node name="Obstacle" type="Area2D"]
+collision_layer = 4
+script = ExtResource("1_hdkxp")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_0263i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_x2l0o")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

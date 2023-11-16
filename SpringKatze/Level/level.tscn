@@ -1,12 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://br0rbmhucq6wo"]
 
+[ext_resource type="Script" path="res://Level/level.gd" id="1_8s84x"]
 [ext_resource type="PackedScene" uid="uid://doyp03miw6i84" path="res://Player/player.tscn" id="1_hdn2q"]
-[ext_resource type="PackedScene" uid="uid://df2qmf64rwnip" path="res://Obstacle/obstacle.tscn" id="2_t0brr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hskae"]
 size = Vector2(256, 20)
 
 [node name="Level" type="Node2D"]
+script = ExtResource("1_8s84x")
 
 [node name="Player" parent="." instance=ExtResource("1_hdn2q")]
 position = Vector2(155, 143)
@@ -20,5 +21,8 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
 shape = SubResource("RectangleShape2D_hskae")
 
-[node name="Obstacle" parent="." instance=ExtResource("2_t0brr")]
-position = Vector2(1517, 488)
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_timer_timeout"]

@@ -1,19 +1,67 @@
-[gd_scene load_steps=4 format=3 uid="uid://df2qmf64rwnip"]
+[gd_scene load_steps=12 format=3 uid="uid://df2qmf64rwnip"]
 
 [ext_resource type="Texture2D" uid="uid://cvxtwg0dhgff1" path="res://Assets/Obstacles/Sloth/s1.png" id="1_0263i"]
 [ext_resource type="Script" path="res://Obstacle/obstacle.gd" id="1_hdkxp"]
+[ext_resource type="Texture2D" uid="uid://dfdlj7j36v420" path="res://Assets/Obstacles/pizza/p1.png" id="2_vppqv"]
+[ext_resource type="Texture2D" uid="uid://cqu8dtc0s4yg7" path="res://Assets/Obstacles/pizza/p2.png" id="3_yd2iy"]
+[ext_resource type="Texture2D" uid="uid://dupegss2ed4io" path="res://Assets/Obstacles/pizza/p3.png" id="4_wy3ig"]
+[ext_resource type="Texture2D" uid="uid://br2qj34vcmbma" path="res://Assets/Obstacles/pizza/p4.png" id="5_xd2a5"]
+[ext_resource type="Texture2D" uid="uid://bjcpkajexscp0" path="res://Assets/Obstacles/Sloth/s2.png" id="7_82hg5"]
+[ext_resource type="Texture2D" uid="uid://c8vrdsjo0gp8j" path="res://Assets/Obstacles/Sloth/s3.png" id="8_t5awf"]
+[ext_resource type="Texture2D" uid="uid://bh6h7ljaog6ei" path="res://Assets/Obstacles/Sloth/s4.png" id="9_26g5y"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pr04v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vppqv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_yd2iy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wy3ig")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xd2a5")
+}],
+"loop": true,
+"name": &"pizza",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0263i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_82hg5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_t5awf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_26g5y")
+}],
+"loop": true,
+"name": &"sloth",
+"speed": 5.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x2l0o"]
 radius = 88.0
 height = 240.0
 
 [node name="Obstacle" type="Area2D"]
+position = Vector2(1616, 472)
 collision_layer = 4
 script = ExtResource("1_hdkxp")
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_0263i")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_pr04v")
+animation = &"pizza"
+frame = 2
+frame_progress = 0.0236439
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8, 8)

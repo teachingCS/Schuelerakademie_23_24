@@ -32,7 +32,7 @@ func _input(event):
 		else:
 			zeichne_Zelle(xpos, ypos, 0)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	berechne_temporäres_feld()
 
 
@@ -45,7 +45,7 @@ func erzeuge_temp_feld():
 
 
 func zeichne_Zelle(xPosition : int, yPosition : int, tilesetID : int):
-	set_cell(0, Vector2i(xPosition,yPosition), tilesetID, Vector2i(0,0))
+	set_cell(0, Vector2(xPosition,yPosition), tilesetID, Vector2(0,0))
 	
 func berechne_temporäres_feld():
 	if not spiel_läuft:

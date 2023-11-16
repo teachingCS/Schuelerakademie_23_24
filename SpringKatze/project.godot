@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="SpringKatze"
+config/tags=PackedStringArray("schülerakademie")
 run/main_scene="res://Level/level.tscn"
 config/features=PackedStringArray("4.1", "GL Compatibility")
 config/icon="res://Assets/Player/jump.png"
+
+[display]
+
+window/size/resizable=false
 
 [rendering]
 

@@ -1,17 +1,122 @@
-[gd_scene load_steps=12 format=3 uid="uid://df2qmf64rwnip"]
+[gd_scene load_steps=32 format=3 uid="uid://df2qmf64rwnip"]
 
 [ext_resource type="Texture2D" uid="uid://cvxtwg0dhgff1" path="res://Assets/Obstacles/Sloth/s1.png" id="1_0263i"]
 [ext_resource type="Script" path="res://Obstacle/obstacle.gd" id="1_hdkxp"]
 [ext_resource type="Texture2D" uid="uid://dfdlj7j36v420" path="res://Assets/Obstacles/pizza/p1.png" id="2_vppqv"]
+[ext_resource type="Texture2D" uid="uid://rw77aovu3obd" path="res://Assets/Obstacles/couch/c1.png" id="2_wd8qt"]
+[ext_resource type="Texture2D" uid="uid://cl2wo3pgmg3pw" path="res://Assets/Obstacles/couch/c2.png" id="3_4pere"]
 [ext_resource type="Texture2D" uid="uid://cqu8dtc0s4yg7" path="res://Assets/Obstacles/pizza/p2.png" id="3_yd2iy"]
 [ext_resource type="Texture2D" uid="uid://dupegss2ed4io" path="res://Assets/Obstacles/pizza/p3.png" id="4_wy3ig"]
+[ext_resource type="Texture2D" uid="uid://c38iu4ha543mr" path="res://Assets/Obstacles/couch/c3.png" id="4_ymech"]
+[ext_resource type="Texture2D" uid="uid://bhc2vw0w5b0dl" path="res://Assets/Obstacles/couch/c4.png" id="5_ev8j2"]
 [ext_resource type="Texture2D" uid="uid://br2qj34vcmbma" path="res://Assets/Obstacles/pizza/p4.png" id="5_xd2a5"]
+[ext_resource type="Texture2D" uid="uid://dcffcxi7ik52x" path="res://Assets/Obstacles/family/1.png" id="6_xweoq"]
+[ext_resource type="Texture2D" uid="uid://v2ip3qjhte7m" path="res://Assets/Obstacles/family/2.png" id="7_1abnu"]
 [ext_resource type="Texture2D" uid="uid://bjcpkajexscp0" path="res://Assets/Obstacles/Sloth/s2.png" id="7_82hg5"]
 [ext_resource type="Texture2D" uid="uid://c8vrdsjo0gp8j" path="res://Assets/Obstacles/Sloth/s3.png" id="8_t5awf"]
+[ext_resource type="Texture2D" uid="uid://bdab85dpagiq4" path="res://Assets/Obstacles/family/3.png" id="8_w8k48"]
+[ext_resource type="Texture2D" uid="uid://c6mj2k262rvef" path="res://Assets/Obstacles/family/4.png" id="9_01obf"]
 [ext_resource type="Texture2D" uid="uid://bh6h7ljaog6ei" path="res://Assets/Obstacles/Sloth/s4.png" id="9_26g5y"]
+[ext_resource type="Texture2D" uid="uid://dax5isd8l8xht" path="res://Assets/Obstacles/kittens/k1.png" id="10_wl1hl"]
+[ext_resource type="Texture2D" uid="uid://dvi758l04yrhh" path="res://Assets/Obstacles/kittens/k2.png" id="11_1ne2q"]
+[ext_resource type="Texture2D" uid="uid://ci80ybocxtv5a" path="res://Assets/Obstacles/kittens/k3.png" id="12_sp3dm"]
+[ext_resource type="Texture2D" uid="uid://cskli4mje0yqx" path="res://Assets/Obstacles/kittens/k4.png" id="13_l08gc"]
+[ext_resource type="Texture2D" uid="uid://4mleaous3ogq" path="res://Assets/Obstacles/maru/m1.png" id="14_rvs3s"]
+[ext_resource type="Texture2D" uid="uid://qodnls0dt072" path="res://Assets/Obstacles/maru/m2.png" id="15_5cpci"]
+[ext_resource type="Texture2D" uid="uid://duw5u2ncxw3rn" path="res://Assets/Obstacles/maru/m3.png" id="16_vqmso"]
+[ext_resource type="Texture2D" uid="uid://cg7ab62fsn3tk" path="res://Assets/Obstacles/maru/m4.png" id="17_pdag1"]
+[ext_resource type="Texture2D" uid="uid://bqdt25v6kv5no" path="res://Assets/Obstacles/pile/p1.png" id="18_v6nh1"]
+[ext_resource type="Texture2D" uid="uid://cg1qv505ewbrw" path="res://Assets/Obstacles/pile/p2.png" id="19_hd7j1"]
+[ext_resource type="Texture2D" uid="uid://74vx5go7bhjt" path="res://Assets/Obstacles/pile/p3.png" id="20_6pfbw"]
+[ext_resource type="Texture2D" uid="uid://bnw54mcnpo87r" path="res://Assets/Obstacles/pile/p4.png" id="21_n55xe"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pr04v"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_wd8qt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4pere")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ymech")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ev8j2")
+}],
+"loop": true,
+"name": &"couch",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_xweoq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_1abnu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_w8k48")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_01obf")
+}],
+"loop": true,
+"name": &"family",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_wl1hl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_1ne2q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_sp3dm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_l08gc")
+}],
+"loop": true,
+"name": &"kittens",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_rvs3s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_5cpci")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_vqmso")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_pdag1")
+}],
+"loop": true,
+"name": &"maru",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_v6nh1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_hd7j1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_6pfbw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_n55xe")
+}],
+"loop": true,
+"name": &"pile",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_vppqv")
@@ -59,13 +164,17 @@ metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_pr04v")
-animation = &"pizza"
-frame = 2
-frame_progress = 0.0236439
+animation = &"couch"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8, 8)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_x2l0o")
 
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(2.67029e-05, 20)
+scale = Vector2(14.4, 8.4)
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

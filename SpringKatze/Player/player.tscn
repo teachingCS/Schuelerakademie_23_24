@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://doyp03miw6i84"]
+[gd_scene load_steps=10 format=3 uid="uid://doyp03miw6i84"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_6c218"]
 [ext_resource type="Texture2D" uid="uid://2pqoxludev0e" path="res://Assets/Player/jump.png" id="2_awq6t"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dj51i76rwfwpu" path="res://Assets/Player/w2.png" id="4_lo4wi"]
 [ext_resource type="Texture2D" uid="uid://do8wfjiywbq53" path="res://Assets/Player/w3.png" id="5_obsse"]
 [ext_resource type="Texture2D" uid="uid://bwnfqeiaqoctp" path="res://Assets/Player/w4.png" id="6_ffbor"]
+[ext_resource type="AudioStream" uid="uid://bx5ykibgqhd7v" path="res://Assets/Sound/jump.ogg" id="7_xov81"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_aywjp"]
 animations = [{
@@ -54,3 +55,6 @@ flip_h = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_xo7t8")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_xov81")

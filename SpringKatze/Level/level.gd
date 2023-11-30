@@ -1,6 +1,6 @@
 extends Node2D
 
-var score : int = 0
+
 # preload der Obstacleszene
 const OBSTACLESZENE = preload("res://Obstacle/obstacle.tscn")
 
@@ -18,9 +18,9 @@ func _on_spawn_timer_timeout():
 	
 	
 func _on_score_timer_timeout():
-	score += 1
+	GameState.current_score += 1
 	# ScoreLabel aktualisieren:
-	$ScoreLabel.text = "Score: " + str(score)
+	$ScoreLabel.text = "Score: " + str(GameState.current_score)
 	# Alternative: $ScoreLabel.text = "Score: %d" % score
 
 

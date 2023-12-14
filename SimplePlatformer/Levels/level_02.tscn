@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://doht7hlxyow8n"]
+
+[ext_resource type="PackedScene" uid="uid://bgmryra4j683l" path="res://TileMapWinter/tile_map_winter.tscn" id="1_ee7l2"]
+[ext_resource type="PackedScene" uid="uid://boycfx8abcse2" path="res://Player/player.tscn" id="2_q7m1d"]
+
+[node name="Level02" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -560.0
+offset_top = -232.0
+offset_right = 1384.0
+offset_bottom = 904.0
+color = Color(0.988235, 0.921569, 0.960784, 1)
+
+[node name="TileMapWinter" parent="." instance=ExtResource("1_ee7l2")]
+layer_0/tile_data = PackedInt32Array(2424848, 917505, 0, 1835031, 2752513, 29, 1900567, 2752513, 30, 1966103, 2752513, 31, 2031639, 2752513, 32, 2097175, 2752513, 33, 2162711, 2752513, 34, 1769496, 2818049, 28, 1835032, 2818049, 29, 1900568, 2818049, 30, 1966104, 2818049, 31, 2031640, 2818049, 32, 2097176, 2818049, 33, 2162712, 2818049, 34, 1769497, 2883585, 28, 1835033, 2883585, 29, 1900569, 2883585, 30, 1966105, 2883585, 31, 1769498, 2949121, 28, 1835034, 2949121, 29, 1900570, 2949121, 30, 1769499, 3014657, 28, 1835035, 3014657, 29, 1900571, 3014657, 30, 1966107, 3014657, 31, 1769500, 3080193, 28, 1835036, 3080193, 29, 1900572, 3080193, 30, 1966108, 3080193, 31, 2031644, 3080193, 32, 2097180, 3080193, 33, 1835037, 3145729, 29, 1900573, 3145729, 30, 1966109, 3145729, 31, 2031645, 3145729, 32, 2097181, 3145729, 33, 2490363, 917505, 0)
+
+[node name="Player" parent="." instance=ExtResource("2_q7m1d")]

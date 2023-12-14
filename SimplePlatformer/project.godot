@@ -1,0 +1,22 @@
+config_version=5
+
+[application]
+
+config/name="SimplePlatformer"
+run/main_scene="res://Levels/level_01.tscn"
+config/features=PackedStringArray("4.2", "GL Compatibility")
+config/icon="res://Assets/caneRedSmall.png"
+config/tags=PackedStringArray("schülerakademie")
+
+[autoload]
+
+GameState="*res://GameState/game_state.tscn"
+
+[display]
+
+window/size/resizable=false
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

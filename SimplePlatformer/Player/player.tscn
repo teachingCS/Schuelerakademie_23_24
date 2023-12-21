@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://boycfx8abcse2"]
+[gd_scene load_steps=12 format=3 uid="uid://boycfx8abcse2"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_jgevb"]
 [ext_resource type="Texture2D" uid="uid://ofm8qh6luj7b" path="res://Assets/Player/alienGreen_stand.png" id="2_fif1c"]
 [ext_resource type="Texture2D" uid="uid://b30iucgysey23" path="res://Assets/Player/alienGreen_jump.png" id="3_fm4ql"]
 [ext_resource type="Texture2D" uid="uid://dt4lttrkcud84" path="res://Assets/Player/alienGreen_walk1.png" id="4_lyfrv"]
 [ext_resource type="Texture2D" uid="uid://ce7184we5cx0k" path="res://Assets/Player/alienGreen_walk2.png" id="5_6qf0k"]
+[ext_resource type="Texture2D" uid="uid://bevvdg4uxf3hg" path="res://Assets/Player/star.png" id="6_814rs"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rjh02"]
 animations = [{
@@ -40,6 +41,23 @@ animations = [{
 radius = 40.0
 height = 144.0
 
+[sub_resource type="Curve" id="Curve_nmgfl"]
+_data = [Vector2(0.00574712, 0.969085), 0.0, -2.84335, 0, 0, Vector2(0.916667, 0.288942), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_yxbxn"]
+curve = SubResource("Curve_nmgfl")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_v4h31"]
+particle_flag_disable_z = true
+angular_velocity_min = 15.0
+angular_velocity_max = 360.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.4
+scale_max = 0.4
+color = Color(0.945098, 0.662745, 0.0901961, 1)
+emission_curve = SubResource("CurveTexture_yxbxn")
+
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_jgevb")
@@ -54,3 +72,11 @@ position = Vector2(2, 56)
 shape = SubResource("CapsuleShape2D_g0b6a")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Trail" type="GPUParticles2D" parent="."]
+show_behind_parent = true
+position = Vector2(0, 32)
+amount = 32
+process_material = SubResource("ParticleProcessMaterial_v4h31")
+texture = ExtResource("6_814rs")
+lifetime = 0.75

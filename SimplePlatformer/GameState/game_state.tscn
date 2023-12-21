@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://b34qleeaajdkl"]
+[gd_scene load_steps=4 format=3 uid="uid://b34qleeaajdkl"]
 
 [ext_resource type="Script" path="res://GameState/game_state.gd" id="1_ij0oj"]
+[ext_resource type="PackedScene" uid="uid://c1b5xcc7or5wc" path="res://Levels/level_01.tscn" id="2_gngcj"]
+[ext_resource type="PackedScene" uid="uid://doht7hlxyow8n" path="res://Levels/level_02.tscn" id="3_d2uhi"]
 
 [node name="GameState" type="Node"]
 script = ExtResource("1_ij0oj")
+levels = Array[Resource]([ExtResource("2_gngcj"), ExtResource("3_d2uhi")])

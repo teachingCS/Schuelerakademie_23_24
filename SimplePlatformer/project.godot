@@ -22,7 +22,9 @@ GameState="*res://GameState/game_state.tscn"
 
 [display]
 
-window/size/resizable=false
+window/size/viewport_width=1024
+window/size/viewport_height=550
+window/stretch/mode="canvas_items"
 
 [rendering]
 

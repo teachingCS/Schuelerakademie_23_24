@@ -1,4 +1,4 @@
 # Schuelerakademie_23_24
 Hier werden alle Projekte gespeichert, die im Rahmen des Kurses 2D & 3D Spieleprogrammierung umgesetzt werden.
 
-## Nächsten Treffen am 22.02.:
+## Nächsten Treffen am 29.02.

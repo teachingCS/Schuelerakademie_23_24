@@ -25,11 +25,18 @@ func _process(delta):
 	
 	twist_pivot.rotate_y(twist_input)
 	pitch_pivot.rotate_x(pitch_input)
+	
 	pitch_pivot.rotation.x = clamp(pitch_pivot.rotation.x, deg_to_rad(-30), deg_to_rad(30))
+	
+	twist_input = 0
+	pitch_input = 0
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
 		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 			twist_input = -event.relative.x * mouse_sensitivity
 			pitch_input = -event.relative.y * mouse_sensitivity
-			
+	
+	if event.is_action_pressed("jump"):
+		if $RayCast3D.is_colliding():
+			apply_central_impulse(Vector3.UP * 15.0)

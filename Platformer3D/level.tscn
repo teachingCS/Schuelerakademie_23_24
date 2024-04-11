@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b3cd56n1dua7b" path="res://player.tscn" id="1_l6qxn"]
 [ext_resource type="Script" path="res://WorldBoundary.gd" id="2_1nglc"]
+[ext_resource type="MeshLibrary" uid="uid://qn8y3dd1lpl8" path="res://PrototypeTiles.tres" id="3_yukfk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_s7kax"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -15,13 +16,14 @@ background_mode = 2
 sky = SubResource("Sky_h05e4")
 tonemap_mode = 2
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_m0ep1"]
-size = Vector2(10, 10)
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_llyml"]
-data = PackedVector3Array(5, 0, 5, -5, 0, 5, 5, 0, -5, -5, 0, 5, -5, 0, -5, 5, 0, -5)
-
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_o14kx"]
+
+[sub_resource type="Curve3D" id="Curve3D_r5vml"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -16.6028, 0, -2.48076, 0, 0, 0, 0, 0, 0, -14.8416, 0, -4.52121, 0, 0, 0, 0, 0, 0, -11.9205, 0, -6.11062, 0, 0, 0, 0, 0, 0, -11.0614, 0, -9.05317, 0, 0, 0, 0, 0, 0, -7.58189, 0, -9.74048, 0, 0, 0, 0, 0, 0, -5.31833, 0.820146, -8.78266, 0, 0, 0, 0, 0, 0, -3.69026, 1.34955, -8.05072, 0, 0, 0, 0, 0, 0, -2.33898, 0.619339, -6.61125, 0, 0, 0, 0, 0, 0, -1.47268, -1.20618, -4.72288),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 9
 
 [node name="Level" type="Node3D"]
 
@@ -32,15 +34,6 @@ environment = SubResource("Environment_ntibe")
 transform = Transform3D(-0.960779, -0.241362, 0.136556, 0, 0.492424, 0.870356, -0.277315, 0.83622, -0.47311, 0, 0, 0)
 shadow_enabled = true
 
-[node name="Boden" type="StaticBody3D" parent="."]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Boden"]
-mesh = SubResource("PlaneMesh_m0ep1")
-skeleton = NodePath("../..")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Boden"]
-shape = SubResource("ConcavePolygonShape3D_llyml")
-
 [node name="Player" parent="." instance=ExtResource("1_l6qxn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.91042, 0)
 
@@ -50,5 +43,34 @@ script = ExtResource("2_1nglc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="WorldBoundary"]
 shape = SubResource("WorldBoundaryShape3D_o14kx")
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("3_yukfk")
+data = {
+"cells": PackedInt32Array(-65536, 1, 2, -65535, 65534, 2, -1, 65534, 2, -2, 65534, 2, -2, 65535, 2, -1, 65535, 2, -65536, 0, 2, -1, 0, 2, -2, 0, 2, -2, 1, 2, -1, 1, 2, -65536, 65534, 2, -65536, 65535, 2, -65535, 65535, 2, -65535, 0, 2, -65535, 1, 2, -65531, 1, 2, -65531, 0, 2, -65530, 0, 2, -65530, 1, 2, -65528, 0, 2, -65527, 0, 2, -65527, 65535, 2, -65526, 65535, 2, -65526, 65534, 2, -65526, 65533, 2, -65527, 65533, 2, -65527, 65532, 2, -65528, 65532, 2, -65530, 65532, 2, -65531, 65532, 2, -65531, 65531, 2, -65530, 65531, 2, -65530, 65530, 2, -65531, 65530, 2, -65532, 65530, 2, -65534, 65530, 2, -65535, 65530, 2, -65536, 65530, 2, -65536, 65531, 2, -65535, 65531, 2, -65535, 65532, 2, -65536, 65532, 2, -65533, 65530, 2, -65534, 65529, 2, -65533, 65529, 2, -65532, 65529, 2, -65531, 65529, 2, -65533, 65528, 2, -65532, 65528, 2, -65532, 0, 2, -65532, 1, 2, 5, 65535, 0, 5, 2, 0, 6, 2, 0, 7, 2, 0, 7, 1, 0, 7, 0, 0, 7, 65535, 0, 6, 65535, 0, 6, 0, 2, 6, 65530, 0, 5, 65529, 0, 6, 65529, 0, 4, 65529, 0, 3, 65529, 2, 2, 65529, 2, 6, 65531, 2, 7, 65529, 2, 7, 65530, 2, 7, 65528, 2, 6, 65528, 2, 5, 65528, 2)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="CSGTorus3D" type="CSGTorus3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.2252, 0, 0)
+use_collision = true
+inner_radius = 1.5
+outer_radius = 3.5
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="."]
+use_collision = true
+mode = 2
+path_node = NodePath("Path3D")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+
+[node name="Path3D" type="Path3D" parent="CSGPolygon3D"]
+curve = SubResource("Curve3D_r5vml")
 
 [connection signal="body_entered" from="WorldBoundary" to="WorldBoundary" method="_on_body_entered"]

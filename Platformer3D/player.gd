@@ -10,6 +10,14 @@ var pitch_input := 0.0
 @onready var twist_pivot := $TwistPivot
 @onready var pitch_pivot := $TwistPivot/PitchPivot
 
+@onready var character := $Character
+
+@onready var animator := $AnimationTree
+@onready var playback = animator["parameters/playback"]
+
+var blend_path := "parameters/Run/blend_position"
+
+
 # Deklarieren der Variable coin_count und überschreiben der setter-Methode dieses Attributs
 var coin_count := 0:
 	set(value):
@@ -39,6 +47,14 @@ func _process(delta):
 	
 	twist_input = 0
 	pitch_input = 0
+	
+	# Animation des Characters
+	if not input.is_zero_approx():
+		var move_direction = twist_pivot.basis * input
+		var align = character.transform.looking_at(character.transform.origin - move_direction)
+		character.transform = character.transform.interpolate_with(align, delta * 20.0)
+	
+	animator[blend_path] = lerp(animator[blend_path], input.length(), delta * 5.0)
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
@@ -49,3 +65,4 @@ func _unhandled_input(event):
 	if event.is_action_pressed("jump"):
 		if $RayCast3D.is_colliding():
 			apply_central_impulse(Vector3.UP * 15.0)
+			playback.start("Hop")
